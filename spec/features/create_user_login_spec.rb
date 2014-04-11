@@ -31,5 +31,6 @@ feature 'Login', %q{
     fill_in 'Password', with: 'password'
     click_button 'Sign in'
     expect(page).to_not have_content('Welcome Back')
+    expect(page).to have_content('Invalid email or password.')
   end
 end
