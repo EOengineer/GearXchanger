@@ -1,5 +1,6 @@
 require 'spec_helper'
 
+
 feature 'sign up' , %q{
   As an unauthenticated user
   I want to sign up
@@ -15,13 +16,25 @@ feature 'sign up' , %q{
 
   scenario 'specifying valid and required information' do
     visit root_path
-    click_link 'Login'
+    click_link 'Register'
     fill_in 'First name', with: 'Jimi'
     fill_in 'Last name', with: 'Hendrix'
     fill_in 'Email', with: 'Jimi@Hendrix.com'
-    fill_in 'Password', with: 'password'
-    fill_in 'Confirm password', with: 'password'
-    click_button 'Sign in'
-    expect(page).to have_content('What would you like to do?')
+    find('#user_password').set('password')
+    find('#user_password_confirmation').set('password')
+    click_button 'Sign up'
+    expect(page).to have_content("Welcome! You have signed up successfully.")
+  end
+
+  scenario 'specifying invalid information' do
+    visit root_path
+    click_link 'Register'
+    fill_in 'First name', with: ''
+    fill_in 'Last name', with: ''
+    fill_in 'Email', with: ''
+    find('#user_password_confirmation').set('')
+    find('#user_password_confirmation').set('')
+    click_button 'Sign up'
+    expect(page).to have_content("can't be blank")
   end
 end
