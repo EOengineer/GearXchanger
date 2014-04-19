@@ -21,6 +21,7 @@ feature 'Login', %q{
   fill_in 'Email', with: user.email
   fill_in 'Password', with: user.password
   click_button 'Sign in'
+
   expect(page).to have_content('Welcome Back!')
   end
 
@@ -30,7 +31,33 @@ feature 'Login', %q{
     fill_in 'Email', with: 'nothereyet@oops.com'
     fill_in 'Password', with: 'password'
     click_button 'Sign in'
+
     expect(page).to_not have_content('Welcome Back')
     expect(page).to have_content('Invalid email or password.')
+  end
+
+  scenario 'an existing email with incorrect password is denied' do
+    user = FactoryGirl.create(:user)
+    visit root_path
+    click_link 'Login'
+    fill_in 'Email', with: user.email
+    fill_in 'Password', with: 'wrongpassword'
+    click_button 'Sign in'
+
+    expect(page).to have_content('Invalid email or password.')
+  end
+
+  scenario 'an already authenticated user cannot reauthenticate' do
+    user = FactoryGirl.create(:user)
+    visit new_user_session_path
+    fill_in 'Email', with: user.email
+    fill_in 'Password', with: user.password
+    click_button 'Sign in'
+
+    expect(page).to_not have_content('Sign in')
+
+    visit new_user_session_path
+    expect(page).to have_content('You are already signed in.')
+
   end
 end
