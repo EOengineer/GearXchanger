@@ -1,11 +1,12 @@
 <h1>Tell us about what you are selling!</h1>
-<%= simple_form_for @sale do |f| %>
+<%= simple_form_for @sale, html: {multipart: true} do |f| %>
   <%= f.input :title %>
   <%= f.input :description %>
   <%= f.input :price %>
   <%= f.input :city %>
   <%= f.input :state, collection: Sale::STATES %>
   <%= f.input :phone_number %>
+  <%= f.input :image, as: :file %>
   <%= f.association :category, label_method: :name %>
   <%= f.submit %>
 <% end %>

@@ -6,4 +6,6 @@ class Sale < ActiveRecord::Base
   validates :price, presence: true, numericality: true, format: { with: /\d{1,7}(\.\d{0,2})?/ }
   validates :city, presence: true
   validates :state, presence: true, inclusion: {in: STATES}
+
+  mount_uploader :image, GearPhotoUploader
 end
