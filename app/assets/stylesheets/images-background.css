@@ -1,0 +1,17 @@
+.pages-home {
+  background-image:url(amp-background.jpg);
+  background-repeat:no-repeat;
+  background-position: center center;
+}
+
+.pages-buy_or_sell {
+  background-image:url(amp-background.jpg);
+  background-repeat:no-repeat;
+  background-position: center center;
+}
+
+.white-title{
+  color: white;
+  text-align: center;
+  padding-top: 5%;
+}
