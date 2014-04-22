@@ -16,7 +16,7 @@ feature 'uploading a photo' do
     attach_file 'Image', Rails.root.join('spec/file_fixtures/valid_image.png')
     click_button 'Create Sale'
     expect(Sale.last.image.url).to be_present
-    #expect(page).to have_content("Successfully created sale")
+    expect(page).to have_content("What would you like to do?")
     expect(page).to_not have_content("can't be blank")
   end
 end
