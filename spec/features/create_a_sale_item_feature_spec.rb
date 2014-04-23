@@ -32,7 +32,7 @@ So that I can help someone else shred harder
     fill_in 'Price', with: '20,000'
     fill_in 'Phone number', with: '617-555-6789'
     click_button 'Create Sale'
-    #expect(page).to have_content("Successfully created sale")
+    expect(page).to have_content("Successfully created sale")
     expect(page).to_not have_content("can't be blank")
   end
 

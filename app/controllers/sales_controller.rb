@@ -16,6 +16,10 @@ class SalesController < ApplicationController
     end
   end
 
+  def index
+    @sale = Sale.all
+  end
+
   private
 
   def sale_params

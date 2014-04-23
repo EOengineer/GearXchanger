@@ -15,3 +15,16 @@
   text-align: center;
   padding-top: 5%;
 }
+
+
+.sales-index {
+  background-image:url(amp-background.jpg);
+  background-repeat:no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  color: white;
+}
+
+.index {
+  color: white;
+}
