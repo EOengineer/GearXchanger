@@ -1,8 +1,15 @@
 GearXchanger::Application.routes.draw do
   devise_for :users
   resources :sales
+  # constraints(Constraints::Auth.new) do
+  #   root 'pages#buy_or_sell'
+  # end
 
-  root 'pages#home'
+
+  get '/', to: 'pages#buy_or_sell', constraints: Constraints::Auth.new
+  get '/', to: 'pages#home'
+
+  # root 'pages#home'
 
   get '/buy-or-sell' => 'pages#buy_or_sell'
 
