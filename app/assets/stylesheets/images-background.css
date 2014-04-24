@@ -14,6 +14,7 @@
   color: white;
   text-align: center;
   padding-top: 5%;
+  padding-bottom: 5%;
 }
 
 
@@ -25,6 +26,31 @@
   color: white;
 }
 
+.sales-new {
+  background-image:url(cans-background.jpg);
+}
+
 .index {
   color: white;
+}
+
+.contain-sales {
+  background-color: gray;
+}
+
+.search-form {
+  color: white;
+}
+
+.hidden {
+  display: none;
+}
+
+.white {
+  color: white;
+}
+
+.fade {
+  background:rgba(255,255,255,0.5);
+  border-radius: 5px;
 }

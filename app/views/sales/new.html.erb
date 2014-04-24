@@ -1,12 +1,21 @@
-<h1>Tell us about what you are selling!</h1>
+
+<div class="row">
+  <div class="small-11 large-centered columns text-center">
+  <h1>Tell us about what you are selling!</h1>
+  </div>
+</div>
 <%= simple_form_for @sale, html: {multipart: true} do |f| %>
-  <%= f.input :title %>
-  <%= f.input :description %>
-  <%= f.input :price %>
-  <%= f.input :city %>
-  <%= f.input :state, collection: Sale::STATES %>
-  <%= f.input :phone_number %>
-  <%= f.input :image, as: :file %>
-  <%= f.association :category, label_method: :name %>
-  <%= f.submit %>
+<div class="row">
+  <div class="small-6 large-centered columns">
+  <%= f.input :title, label_html: { class: 'white' } %>
+  <%= f.input :description, label_html: { class: 'white' } %>
+  <%= f.input :price, label_html: { class: 'white' } %>
+  <%= f.input :city, label_html: { class: 'white' } %>
+  <%= f.input :state, collection: Sale::STATES, label_html: { class: 'white' } %>
+  <%= f.input :phone_number, label_html: { class: 'white' } %>
+  <%= f.input :image, as: :file, label_html: { class: 'white' } %>
+  <%= f.association :category, label_method: :name, label_html: { class: 'white' } %>
+  <%= f.submit class: "button" %>
 <% end %>
+</div>
+</div>

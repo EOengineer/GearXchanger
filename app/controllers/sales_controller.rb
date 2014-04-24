@@ -17,7 +17,11 @@ class SalesController < ApplicationController
   end
 
   def index
-    @sale = Sale.all
+    if params[:q]
+      @sales = Sale.search(params[:q])
+    else
+      @sales = Sale.all
+    end
   end
 
   private

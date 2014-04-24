@@ -13,7 +13,26 @@
 //= require jquery
 //= require jquery_ujs
 //= require foundation
-//= require turbolinks
+//= require chosen-jquery
 //= require_tree .
 
-$(function(){ $(document).foundation(); });
+$(function(){
+  $(document).foundation();
+  $('.chosen').chosen();
+});
+
+var searchvisible = 0;
+$("#search-menu").click(function(e){
+    //This stops the page scrolling to the top on a # link.
+    e.preventDefault();
+    if (searchvisible ===0) {
+        //Search is currently hidden. Slide down and show it.
+        $("#search-form").toggleClass("hidden").slideDown(200);
+        $("#s").focus(); //Set focus on the search input field.
+        searchvisible = 1; //Set search visible flag to visible.
+    } else {
+        //Search is currently showing. Slide it back up and hide it.
+        $("#search-form").slideUp(200);
+        searchvisible = 0;
+    }
+});

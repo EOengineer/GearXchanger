@@ -8,4 +8,17 @@ class Sale < ActiveRecord::Base
   validates :state, presence: true, inclusion: {in: STATES}
 
   mount_uploader :image, GearPhotoUploader
+
+  class << self
+    def search(params)
+      sales = Sale.all
+
+      sales = sales.where('title ILIKE ?', "%#{params[:title]}%") if !params[:title].empty?
+      sales = sales.where(state: params[:state]) if params[:state].present?
+      sales = sales.where("price <= ?", params[:price]) if params[:price].present?
+      sales = sales.where('city ILIKE ?', "%#{params[:city]}%") if params[:city].present?
+
+      sales
+    end
+  end
 end

@@ -1,19 +1,54 @@
-<h1 class="white-title">Here are your results!</h1>
-  <% @sale.each do |sale| %>
+<%= simple_form_for :q, method: :get do |f| %>
+<div class="row">
+  <div class="small-2 small-centered columns">
+  <a id="search-menu" href class="button text-center"="#">Search Options</a>
+  </div>
+</div>
+<div id="search-form" class="hidden">
   <div class="row">
+    <div class="small-6 large-centered columns">
+      <div class="small-6 small columns">
+      <%= f.input :city, label_html: { class: 'white' } %>
+      <%= f.input :state, label_html: { class: 'white' }, collection: Sale::STATES %>
+      </div>
+      <div class="small-6 small columns">
+      <%= f.input :title, label_html: { class: 'white' } %>
+      <%= f.input :price, label: 'Maximum Price', label_html: { class: 'white' } %>
+      </div>
+      </div>
+      <div class="row">
+      </div>
+      <div class="small-3 small-centered columns text-center">
+      <%= f.submit 'Search', class: "button" %>
+      <% end %>
+    </div>
+  </div>
+  </div>
+</div>
+
+
+
+<h1 class="white-title">These items are currently available.</h1>
+
+
+
+  <% @sales.each do |sale| %>
+  <div class="row panel fade">
     <div class="small-11 small-centered columns">
       <div class="small-2 large-4 columns">
-    <%= image_tag sale.image.url(:thumb).to_s %>
-      </div>
-      <div class="small-2 large-4 columns text-center">
-      <h3 class="index"><%= sale.title %></h3>
-      <p><%= sale.description %></p>
-      </div>
-      <div class="small-2 large-4 columns text-center">
-      <p><%= sale.city %></p>
-      <p><%= sale.state %></p>
-      <p><%= sale.phone_number %></p>
+        <p><%= "$#{sale.price.to_i}" %></p>
+        <%= image_tag sale.image.url(:thumb).to_s %>
+        </div>
+        <div class="small-2 large-4 columns text-center">
+        <h4 class="index"><%= sale.title %></h4>
+        <p><%= sale.description %></p>
+        </div>
+        <div class="small-2 large-4 columns text-center">
+        <p><%= sale.city %>, <%= sale.state %></p>
+        <p><%= sale.phone_number %></p>
       </div>
     </div>
   </div>
 <% end %>
+
+<!-- , input_html: {class: 'chosen'} -->
