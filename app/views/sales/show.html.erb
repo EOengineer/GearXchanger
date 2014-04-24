@@ -1,4 +1,16 @@
 <div class="row">
-  <%= image_tag @sale.image_url(:thumb).to_s %>
-  <div class="small-11 small-centered columns">@sale.title</div>
+  <div class="small-11 small-centered columns text-center panel">
+    <h2><%= @sale.title %></h2>
+    <h2><%= "$#{@sale.price.to_i}" %></h2>
+  <%= image_tag @sale.image_url.to_s %>
+  <h3><%= @sale.description %></h3>
+  <h3><%= @sale.city %>, <%= @sale.state %></h3>
+  <h3><%= @sale.phone_number %></h3>
+  </div>
+</div>
+<div class="row">
+  <div class="small-6 large-centered columns text-center">
+<%= link_to "View Sales", sales_path, class: 'button' %>
+<%= link_to "Sell More", new_sale_path, class: 'button' %>
+  </div>
 </div>

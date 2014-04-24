@@ -1,7 +1,16 @@
-<%= simple_form_for :q, method: :get do |f| %>
+
+
+
+
+<h1 class="white-title">These items are currently available.</h1>
+
 <div class="row">
-  <div class="small-2 small-centered columns">
-  <a id="search-menu" href class="button text-center"="#">Search Options</a>
+  <div class="large-6 columns text-left">
+<%= link_to "Sell Gear", new_sale_path, class: 'button' %>
+</div>
+<%= simple_form_for :q, method: :get do |f| %>
+  <div class="large-6 columns text-right">
+  <a id="search-menu" href class="button text-right"="#">Search Options</a>
   </div>
 </div>
 <div id="search-form" class="hidden">
@@ -21,29 +30,24 @@
       <div class="small-3 small-centered columns text-center">
       <%= f.submit 'Search', class: "button" %>
       <% end %>
+      </div>
     </div>
   </div>
-  </div>
 </div>
-
-
-
-<h1 class="white-title">These items are currently available.</h1>
-
 
 
   <% @sales.each do |sale| %>
   <div class="row panel fade">
     <div class="small-11 small-centered columns">
-      <div class="small-2 large-4 columns">
-        <p><%= "$#{sale.price.to_i}" %></p>
+      <div class="small-2 large-4 columns text-center">
+        <h3><%= "$#{sale.price.to_i}" %></h3>
         <%= image_tag sale.image.url(:thumb).to_s %>
         </div>
-        <div class="small-2 large-4 columns text-center">
-        <h4 class="index"><%= sale.title %></h4>
+        <div class="small-2 large-5 columns text-center">
+        <h3 class="index"><%= sale.title %></h3>
         <p><%= sale.description %></p>
         </div>
-        <div class="small-2 large-4 columns text-center">
+        <div class="small-2 large-3 columns text-right">
         <p><%= sale.city %>, <%= sale.state %></p>
         <p><%= sale.phone_number %></p>
       </div>
@@ -51,4 +55,4 @@
   </div>
 <% end %>
 
-<!-- , input_html: {class: 'chosen'} -->
+
