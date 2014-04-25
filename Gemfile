@@ -31,6 +31,7 @@ gem 'foundation-rails'
 gem 'devise'
 gem 'mini_magick'
 gem 'chosen-rails'
+gem 'foundation-icons-sass-rails'
 
 group :test, :development do
   gem 'rspec-rails'

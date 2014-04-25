@@ -5,7 +5,7 @@
         <%= simple_form_for @sale, html: {multipart: true} do |f| %>
         <div class="row collapse">
           <div class="small-2 columns">
-            <span class="prefix"><i class="fi-mail"></i></span>
+            <span class="prefix"><i class="fi-at-sign"></i></span>
           </div>
           <div class="small-10 columns">
             <%= f.input :title, label: false, placeholder: "title" %>
@@ -13,7 +13,7 @@
         </div>
         <div class="row collapse">
           <div class="small-2 columns">
-            <span class="prefix"><i class="fi-mail"></i></span>
+            <span class="prefix"><i class="fi-pencil"></i></span>
           </div>
           <div class="small-10 columns">
             <%= f.input :description, label: false, placeholder: "description" %>
@@ -21,7 +21,7 @@
         </div>
         <div class="row collapse">
           <div class="small-2 columns">
-            <span class="prefix"><i class="fi-mail"></i></span>
+            <span class="prefix"><i class="fi-dollar"></i></span>
           </div>
           <div class="small-10 columns">
             <%= f.input :price, label: false, placeholder: "price" %>
@@ -29,7 +29,7 @@
         </div>
         <div class="row collapse">
           <div class="small-2 columns">
-            <span class="prefix"><i class="fi-mail"></i></span>
+            <span class="prefix"><i class="fi-telephone"></i></span>
           </div>
           <div class="small-10 columns">
             <%= f.input :phone_number, label: false, placeholder: "phone number" %>
@@ -37,7 +37,7 @@
         </div>
         <div class="row collapse">
           <div class="small-2 columns">
-            <span class="prefix"><i class="fi-mail"></i></span>
+            <span class="prefix"><i class="fi-home"></i></span>
           </div>
           <div class="small-10 columns">
             <%= f.input :city, label: false, placeholder: "city" %>
@@ -45,7 +45,7 @@
         </div>
         <div class="row collapse">
           <div class="small-2 columns">
-            <span class="prefix"><i class="fi-mail"></i></span>
+            <span class="prefix"><i class="fi-home"></i></span>
           </div>
           <div class="small-10 columns">
           <%= f.input :state, label: false, placeholder: "state", collection: Sale::STATES %>
@@ -53,7 +53,7 @@
         </div>
         <div class="row collapse">
           <div class="small-2 columns">
-            <span class="prefix"><i class="fi-mail"></i></span>
+            <span class="prefix"><i class="fi-music"></i></span>
           </div>
           <div class="small-10 columns">
           <%= f.association :category, label_method: :name, label: false, placeholder: "category" %>
@@ -61,12 +61,15 @@
         </div>
         <div class="row collapse">
           <div class="small-2 columns">
-            <span class="prefix"><i class="fi-mail"></i></span>
+            <span class="prefix"><i class="fi-camera"></i></span>
           </div>
-          <div class="small-10 columns">
+          <div class="small-10 columns text-center">
             <%= f.input :image, as: :file, label: false, placeholder: "image" %>
+            <div class="small-8 large-centered columns">
             <%= f.submit class: "button" %>
           </div>
+          </div>
         </div>
+      </div>
 <% end %>
 

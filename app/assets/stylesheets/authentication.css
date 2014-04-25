@@ -27,3 +27,31 @@
   margin-left: 35%;
 }
 
+.home-panel {
+  padding-top: 15px;
+  border-radius: 5px;
+  border: 2px solid #ccc;
+  margin-top: 30px;
+  background:rgba(255,255,255,0.9);
+}
+
+.home-panel form input, .home-panel form span {
+  height: 50px;
+}
+
+.home-panel .welcome {
+  font-size: 26px;
+  text-align: center;
+  font-weight: 200;
+  margin-left: 0;
+}
+
+.no-pad {
+  padding: 0px
+  margin-left: 0px;
+}
+
+
+
+
+

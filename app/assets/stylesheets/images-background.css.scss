@@ -1,7 +1,8 @@
 .pages-home {
-  background-image:image-url("plexi-background.jpg");
+  background-image:image-url("cans-background.jpg");
   background-repeat:no-repeat;
   background-position: center center;
+  filter: blur(5px);
 }
 
 .pages-buy_or_sell {
