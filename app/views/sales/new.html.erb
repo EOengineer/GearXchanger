@@ -1,21 +1,72 @@
-
 <div class="row">
-  <div class="small-11 large-centered columns text-center">
-  <h1>Tell us about what you are selling!</h1>
-  </div>
-</div>
-<%= simple_form_for @sale, html: {multipart: true} do |f| %>
-<div class="row">
-  <div class="small-6 large-centered columns">
-  <%= f.input :title, label_html: { class: 'white' } %>
-  <%= f.input :description, label_html: { class: 'white' } %>
-  <%= f.input :price, label_html: { class: 'white' } %>
-  <%= f.input :city, label_html: { class: 'white' } %>
-  <%= f.input :state, collection: Sale::STATES, label_html: { class: 'white' } %>
-  <%= f.input :phone_number, label_html: { class: 'white' } %>
-  <%= f.input :image, as: :file, label_html: { class: 'white' } %>
-  <%= f.association :category, label_method: :name, label_html: { class: 'white' } %>
-  <%= f.submit class: "button" %>
+    <div class="small-6 large-centered columns">
+      <div class="signup-panel">
+        <p class="welcome"> What are you selling?</p>
+        <%= simple_form_for @sale, html: {multipart: true} do |f| %>
+        <div class="row collapse">
+          <div class="small-2 columns">
+            <span class="prefix"><i class="fi-mail"></i></span>
+          </div>
+          <div class="small-10 columns">
+            <%= f.input :title, label: false, placeholder: "title" %>
+          </div>
+        </div>
+        <div class="row collapse">
+          <div class="small-2 columns">
+            <span class="prefix"><i class="fi-mail"></i></span>
+          </div>
+          <div class="small-10 columns">
+            <%= f.input :description, label: false, placeholder: "description" %>
+          </div>
+        </div>
+        <div class="row collapse">
+          <div class="small-2 columns">
+            <span class="prefix"><i class="fi-mail"></i></span>
+          </div>
+          <div class="small-10 columns">
+            <%= f.input :price, label: false, placeholder: "price" %>
+          </div>
+        </div>
+        <div class="row collapse">
+          <div class="small-2 columns">
+            <span class="prefix"><i class="fi-mail"></i></span>
+          </div>
+          <div class="small-10 columns">
+            <%= f.input :phone_number, label: false, placeholder: "phone number" %>
+          </div>
+        </div>
+        <div class="row collapse">
+          <div class="small-2 columns">
+            <span class="prefix"><i class="fi-mail"></i></span>
+          </div>
+          <div class="small-10 columns">
+            <%= f.input :city, label: false, placeholder: "city" %>
+          </div>
+        </div>
+        <div class="row collapse">
+          <div class="small-2 columns">
+            <span class="prefix"><i class="fi-mail"></i></span>
+          </div>
+          <div class="small-10 columns">
+          <%= f.input :state, label: false, placeholder: "state", collection: Sale::STATES %>
+          </div>
+        </div>
+        <div class="row collapse">
+          <div class="small-2 columns">
+            <span class="prefix"><i class="fi-mail"></i></span>
+          </div>
+          <div class="small-10 columns">
+          <%= f.association :category, label_method: :name, label: false, placeholder: "category" %>
+          </div>
+        </div>
+        <div class="row collapse">
+          <div class="small-2 columns">
+            <span class="prefix"><i class="fi-mail"></i></span>
+          </div>
+          <div class="small-10 columns">
+            <%= f.input :image, as: :file, label: false, placeholder: "image" %>
+            <%= f.submit class: "button" %>
+          </div>
+        </div>
 <% end %>
-</div>
-</div>
+
