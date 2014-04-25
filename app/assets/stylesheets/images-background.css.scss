@@ -5,7 +5,7 @@
 }
 
 .pages-buy_or_sell {
-  background-image:url(image_path("plexi-background.jpg"));
+  background-image:image-url("plexi-background.jpg");
   background-repeat:no-repeat;
   background-position: center center;
 }
@@ -19,7 +19,7 @@
 
 
 .sales-index {
-  background-image:url(image_path("plexi-background.jpg")) ;
+  background-image:image-url("plexi-background.jpg");
   background-repeat:no-repeat;
   background-position: center center;
   background-attachment: fixed;
@@ -27,25 +27,25 @@
 }
 
 .sales-new {
-  background-image:url(cans-background.jpg);
+  background-image:image-url("cans-background.jpg");
   background-repeat:no-repeat;
   background-position: center center;
 }
 
 .sales-show {
-  background-image:url(cans-background.jpg);
+  background-image:image-url("cans-background.jpg");
   background-repeat:no-repeat;
   background-position: center center;
 }
 
 .registrations-new {
-  background-image:url(cans-background.jpg);
+  background-image:image-url("cans-background.jpg");
   background-repeat:no-repeat;
   background-position: center center;
 }
 
 .sessions-new {
-  background-image:url(cans-background.jpg);
+  background-image:image-url("cans-background.jpg");
   background-repeat:no-repeat;
   background-position: center center;
 }
