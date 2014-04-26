@@ -38,11 +38,12 @@
       <%= image_tag sale.image.url(:thumb).to_s %>
     </div>
       </div>
-      <div class="small-5 large-5 columns text-center">
-        <%= link_to sale do %>
-        <h3 class="index"><%= sale.title %></h3>
-          <% end %>
-        <p><%= sale.description %></p>
+      <div class="small-5 large-5 columns sticky taped2">
+        <p><strong><%= link_to sale do %>
+        <%= sale.title %>
+          <% end %></strong>.
+          <br /><%= sale.description %><br />
+        </p>
         </div>
       <div class="small-2 large-3 columns text-center">
         <p><%= sale.phone_number %></p>
