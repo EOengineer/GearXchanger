@@ -31,10 +31,10 @@
 
   <% @sales.each do |sale| %>
 
-  <div class="row collapse panel fade shadow">
+  <div class="row collapse shadow">
     <div class="small-2 large-4 columns text-center">
-      <h3 class="white shadow-out"><%= "$#{sale.price.to_i}" %></h3>
-      <div class="shadow-out">
+      <h3 class="white"><%= "$#{sale.price.to_i}" %></h3>
+      <div>
       <%= image_tag sale.image.url(:thumb).to_s %>
     </div>
       </div>
