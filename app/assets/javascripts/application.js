@@ -15,6 +15,7 @@
 //= require foundation
 //= require chosen-jquery
 //= require_tree .
+//= require okvideo.min.js
 
 $(function(){
   $(document).foundation();
@@ -36,3 +37,7 @@ $("#search-menu").click(function(e){
         searchvisible = 0;
     }
 });
+
+$(function(){
+          $.okvideo({ source: 'http://vimeo.com/85380157' })
+        });
