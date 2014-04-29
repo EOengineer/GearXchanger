@@ -4,5 +4,5 @@ CarrierWave.configure do |config|
     aws_access_key_id: ENV['gear_bucket'],
     aws_secret_access_key: ENV['gear_secret_key']
   }
-  config.fog_directory  = "gear-#{Rails.env}"
+  config.fog_directory  = "gearx-#{Rails.env}"
 end
